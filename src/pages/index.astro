@@ -1,49 +1,1155 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import {
+  ArrowRight,
+  Shield,
+  Layers,
+  LineChart,
+  ChevronRight,
+  ArrowUpRight,
+  Database,
+  Code,
+  Users,
+  Star,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const today = new Date();
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-background text-foreground">
+    <div class="flex min-h-screen flex-col bg-background text-foreground">
+      <Header />
+      <main class="flex-grow">
+        <section
+          class="relative pb-32 pt-36 md:pb-40 md:pt-48 overflow-hidden border-b border-border"
+        >
+          <div class="absolute inset-0 z-0">
+            {/* Gradientes de colores múltiples */}
+            <div
+              class="absolute top-20 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute top-40 right-1/3 w-80 h-80 bg-blue-500/8 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute bottom-20 left-1/3 w-72 h-72 bg-purple-500/8 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute bottom-32 right-1/4 w-64 h-64 bg-orange-500/6 rounded-full blur-3xl"
+            >
+            </div>
+            {/* Líneas decorativas */}
+            <div
+              class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 via-blue-400/30 via-purple-400/30 to-transparent"
+            >
+            </div>
+            <div
+              class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-400/30 via-emerald-400/50 to-transparent"
+            >
+            </div>
+          </div>
+          <div class="container relative z-10 mx-auto px-4 text-center">
+            <p class="text-emerald-500 mb-3 font-medium">
+              Simplificamos lo complejo
+            </p>
+            <h1
+              class="mx-auto max-w-4xl text-4xl font-bold tracking-tight md:text-6xl"
+            >
+              Creamos la tecnología que hace tu vida y la de tus clientes más
+              fácil
+            </h1>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              En Bithaus, desarrollamos aplicaciones intuitivas y automatizamos
+              esas tareas repetitivas que te quitan tiempo, para que puedas
+              concentrarte en lo que realmente importa: hacer crecer tu negocio.
+            </p>
+            <div
+              class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <Button
+                size="xl"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white"
+              >
+                Solicita evaluación gratuita
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="xl"
+                className="border-emerald-500 text-emerald-500 hover:bg-emerald-50"
+              >
+                Ver proyectos destacados
+              </Button>
+            </div>
+            <div
+              class="mt-16 flex flex-wrap justify-center gap-8 text-sm text-muted-foreground"
+            >
+              <div class="flex items-center">
+                <Shield className="mr-2 h-5 w-5 text-emerald-500" />
+                <span>Automatización inteligente</span>
+              </div>
+              <div class="flex items-center">
+                <Layers className="mr-2 h-5 w-5 text-emerald-500" />
+                <span>Aplicaciones intuitivas</span>
+              </div>
+              <div class="flex items-center">
+                <LineChart className="mr-2 h-5 w-5 text-emerald-500" />
+                <span>Soluciones a medida</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="servicios"
+          class="py-24 bg-background border-b border-emerald-500/20"
+        >
+          <div class="container max-w-7xl mx-auto px-4">
+            {/* Título de sección */}
+            <div class="mb-16 text-center">
+              <div
+                class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+              >
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse">
+                </div>
+                Nuestros servicios
+              </div>
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Tecnología que simplifica tu negocio
+              </h2>
+              <p
+                class="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                En Bithaus transformamos procesos complejos en soluciones
+                intuitivas que impulsan el crecimiento de tu empresa.
+                <span class="text-emerald-400 font-semibold"
+                  >Automatizamos lo repetitivo, simplificamos lo complejo.</span
+                >
+              </p>
+            </div>
+
+            {/* Grid de Servicios Simplificado y Claro */}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Servicio 1 - Desarrollo de Aplicaciones */}
+              <div class="group">
+                <div
+                  class="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 h-full"
+                >
+                  <div
+                    class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <Code className="w-8 h-8 text-white" />
+                  </div>
+
+                  <h3
+                    class="text-xl font-bold text-foreground mb-3 group-hover:text-emerald-400 transition-colors"
+                  >
+                    Desarrollo de Aplicaciones
+                  </h3>
+
+                  <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Creamos aplicaciones web y móviles que automatizan procesos
+                    y simplifican operaciones complejas.
+                  </p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    <span
+                      class="px-2 py-1 bg-blue-500/10 text-blue-400 rounded text-xs border border-blue-500/20"
+                      >React</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-green-500/10 text-green-400 rounded text-xs border border-green-500/20"
+                      >Node.js</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-purple-500/10 text-purple-400 rounded text-xs border border-purple-500/20"
+                      >APIs</span
+                    >
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-emerald-400 hover:text-emerald-300 p-0 h-auto group/btn"
+                  >
+                    Saber más <ArrowUpRight
+                      className="ml-1 w-3 h-3 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Servicio 2 - Automatización */}
+              <div class="group">
+                <div
+                  class="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300 h-full"
+                >
+                  <div
+                    class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <Database className="w-8 h-8 text-white" />
+                  </div>
+
+                  <h3
+                    class="text-xl font-bold text-foreground mb-3 group-hover:text-orange-400 transition-colors"
+                  >
+                    Automatización de Procesos
+                  </h3>
+
+                  <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Identificamos tareas repetitivas y las convertimos en
+                    workflows automatizados que ahorran tiempo.
+                  </p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    <span
+                      class="px-2 py-1 bg-orange-500/10 text-orange-400 rounded text-xs border border-orange-500/20"
+                      >Workflows</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-amber-500/10 text-amber-400 rounded text-xs border border-amber-500/20"
+                      >IA/ML</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded text-xs border border-yellow-500/20"
+                      >Bots</span
+                    >
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-orange-400 hover:text-orange-300 p-0 h-auto group/btn"
+                  >
+                    Saber más <ArrowUpRight
+                      className="ml-1 w-3 h-3 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Servicio 3 - Consultoría */}
+              <div class="group">
+                <div
+                  class="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 h-full"
+                >
+                  <div
+                    class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+
+                  <h3
+                    class="text-xl font-bold text-foreground mb-3 group-hover:text-blue-400 transition-colors"
+                  >
+                    Consultoría Digital
+                  </h3>
+
+                  <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Te ayudamos a identificar oportunidades tecnológicas y crear
+                    estrategias de transformación digital.
+                  </p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    <span
+                      class="px-2 py-1 bg-blue-500/10 text-blue-400 rounded text-xs border border-blue-500/20"
+                      >Análisis</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-indigo-500/10 text-indigo-400 rounded text-xs border border-indigo-500/20"
+                      >Estrategia</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded text-xs border border-cyan-500/20"
+                      >ROI</span
+                    >
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-blue-400 hover:text-blue-300 p-0 h-auto group/btn"
+                  >
+                    Saber más <ArrowUpRight
+                      className="ml-1 w-3 h-3 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Servicio 4 - Soporte */}
+              <div class="group">
+                <div
+                  class="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 h-full"
+                >
+                  <div
+                    class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+
+                  <h3
+                    class="text-xl font-bold text-foreground mb-3 group-hover:text-purple-400 transition-colors"
+                  >
+                    Soporte y Mantenimiento
+                  </h3>
+
+                  <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Garantizamos que tus aplicaciones funcionen perfectamente
+                    con soporte continuo y optimización.
+                  </p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    <span
+                      class="px-2 py-1 bg-purple-500/10 text-purple-400 rounded text-xs border border-purple-500/20"
+                      >24/7</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-pink-500/10 text-pink-400 rounded text-xs border border-pink-500/20"
+                      >Monitoreo</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-violet-500/10 text-violet-400 rounded text-xs border border-violet-500/20"
+                      >Updates</span
+                    >
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-purple-400 hover:text-purple-300 p-0 h-auto group/btn"
+                  >
+                    Saber más <ArrowUpRight
+                      className="ml-1 w-3 h-3 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Proceso de Trabajo */}
+            <div class="mt-20">
+              <div class="text-center mb-12">
+                <div
+                  class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+                >
+                  <div
+                    class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                  >
+                  </div>
+                  Nuestro proceso
+                </div>
+                <h3 class="text-2xl font-bold text-foreground mb-4">
+                  Cómo trabajamos contigo
+                </h3>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                  Un proceso simple y transparente para transformar tu negocio
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                  <div
+                    class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  >
+                    <span class="text-blue-400 font-bold">1</span>
+                  </div>
+                  <h4 class="font-semibold text-foreground mb-2">Análisis</h4>
+                  <p class="text-sm text-muted-foreground">
+                    Entendemos tu negocio e identificamos oportunidades
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <div
+                    class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  >
+                    <span class="text-orange-400 font-bold">2</span>
+                  </div>
+                  <h4 class="font-semibold text-foreground mb-2">Propuesta</h4>
+                  <p class="text-sm text-muted-foreground">
+                    Diseñamos una solución personalizada y transparente
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <div
+                    class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  >
+                    <span class="text-emerald-400 font-bold">3</span>
+                  </div>
+                  <h4 class="font-semibold text-foreground mb-2">Desarrollo</h4>
+                  <p class="text-sm text-muted-foreground">
+                    Construimos tu solución con calidad y rapidez
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <div
+                    class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  >
+                    <span class="text-purple-400 font-bold">4</span>
+                  </div>
+                  <h4 class="font-semibold text-foreground mb-2">Soporte</h4>
+                  <p class="text-sm text-muted-foreground">
+                    Te acompañamos para garantizar el éxito continuo
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROYECTOS DESTACADOS - SECCIÓN SEPARADA */}
+        <section id="proyectos" class="py-20 border-b border-emerald-500/20">
+          <div class="container max-w-7xl mx-auto px-4">
+            <div class="mb-12 text-center">
+              <div
+                class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+              >
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse">
+                </div>
+                Casos de éxito
+              </div>
+              <h2 class="text-3xl font-bold">
+                Proyectos que transforman negocios
+              </h2>
+              <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                Descubre cómo nuestras soluciones han simplificado procesos
+                complejos y automatizado tareas repetitivas en empresas reales.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Proyecto 1 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300 py-0"
+              >
+                <div class="flex flex-col h-full">
+                  <div class="relative overflow-hidden h-48">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-emerald-300/30 to-background/50 z-10"
+                    >
+                    </div>
+                    <img
+                      src="/placeholder.svg?height=400&width=800"
+                      alt="RetailCorp Case Study"
+                      width={800}
+                      height={400}
+                      class="object-cover h-full w-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <Badge
+                      className="absolute top-4 left-4 z-20 bg-emerald-500/80 text-white"
+                      >Retail</Badge
+                    >
+                  </div>
+                  <div class="p-6 md:p-8 flex-1">
+                    <h3 class="text-2xl font-bold mb-3">
+                      RetailCorp: Sistema de inventario
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                      Sistema completo de gestión de inventario que automatizó
+                      procesos manuales y redujo errores en un 35%, generando
+                      ahorros anuales de €120,000.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        React
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        Node.js
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        PostgreSQL
+                      </Badge>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="group/btn mt-auto border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10"
+                    >
+                      Ver caso completo{" "}
+                      <ArrowUpRight
+                        className="ml-1 h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
+                      />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Proyecto 2 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300 py-0"
+              >
+                <div class="flex flex-col h-full">
+                  <div class="relative overflow-hidden h-48">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-emerald-300/30 to-background/50 z-10"
+                    >
+                    </div>
+                    <img
+                      src="/placeholder.svg?height=400&width=800"
+                      alt="FinTech App"
+                      width={800}
+                      height={400}
+                      class="object-cover h-full w-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <Badge
+                      className="absolute top-4 left-4 z-20 bg-emerald-500/80 text-white"
+                      >Fintech</Badge
+                    >
+                  </div>
+                  <div class="p-6 md:p-8 flex-1">
+                    <h3 class="text-2xl font-bold mb-3">
+                      FinAnalytics: Plataforma de análisis
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                      Dashboard analítico para entidades financieras que integra
+                      múltiples fuentes de datos y proporciona insights en
+                      tiempo real para la toma de decisiones.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        Next.js
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        GraphQL
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        AWS
+                      </Badge>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="group/btn mt-auto border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10"
+                    >
+                      Ver caso completo{" "}
+                      <ArrowUpRight
+                        className="ml-1 h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
+                      />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Proyecto 3 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300 py-0"
+              >
+                <div class="flex flex-col h-full">
+                  <div class="relative overflow-hidden h-48">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-emerald-300/30 to-background/50 z-10"
+                    >
+                    </div>
+                    <img
+                      src="/placeholder.svg?height=400&width=800"
+                      alt="Healthcare Platform"
+                      width={800}
+                      height={400}
+                      class="object-cover h-full w-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <Badge
+                      className="absolute top-4 left-4 z-20 bg-emerald-500/80 text-white"
+                      >Salud</Badge
+                    >
+                  </div>
+                  <div class="p-6 md:p-8 flex-1">
+                    <h3 class="text-2xl font-bold mb-3">
+                      HealthConnect: Telemedicina
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                      Plataforma de telemedicina que permitió a una red de
+                      clínicas aumentar su capacidad en un 70% y reducir tiempos
+                      de espera en un 50%.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        React Native
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        WebRTC
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        MongoDB
+                      </Badge>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="group/btn mt-auto border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10"
+                    >
+                      Ver caso completo{" "}
+                      <ArrowUpRight
+                        className="ml-1 h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
+                      />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Proyecto 4 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300 py-0"
+              >
+                <div class="flex flex-col h-full">
+                  <div class="relative overflow-hidden h-48">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-emerald-300/30 to-background/50 z-10"
+                    >
+                    </div>
+                    <img
+                      src="/placeholder.svg?height=400&width=800"
+                      alt="Logistics Platform"
+                      width={800}
+                      height={400}
+                      class="object-cover h-full w-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <Badge
+                      className="absolute top-4 left-4 z-20 bg-emerald-500/80 text-white"
+                      >Logística</Badge
+                    >
+                  </div>
+                  <div class="p-6 md:p-8 flex-1">
+                    <h3 class="text-2xl font-bold mb-3">
+                      LogiTrack: Gestión de flotas
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                      Sistema de seguimiento y optimización logística que redujo
+                      costes operativos en un 25% e incrementó la eficiencia en
+                      entregas en un 40%.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        TypeScript
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        Node.js
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      >
+                        Google Maps API
+                      </Badge>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="group/btn mt-auto border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10"
+                    >
+                      Ver caso completo{" "}
+                      <ArrowUpRight
+                        className="ml-1 h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
+                      />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIOS - SECCIÓN SEPARADA */}
+        <section id="testimonios" class="py-20 border-b border-emerald-500/20">
+          <div class="container max-w-7xl mx-auto px-4">
+            <div class="mb-12 text-center">
+              <div
+                class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+              >
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse">
+                </div>
+                Opiniones de clientes
+              </div>
+              <h2 class="text-3xl font-bold">Lo que dicen nuestros clientes</h2>
+              <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                Experiencias reales de empresas que confiaron en Bithaus para
+                simplificar sus procesos y hacer crecer su negocio.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Testimonial 1 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300"
+              >
+                <CardContent className="p-6 md:p-8">
+                  <div class="flex mb-4">
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                  </div>
+                  <p class="text-foreground mb-6 italic">
+                    "Lanzamos en 3 semanas menos de lo previsto y superamos
+                    todos los objetivos de negocio. La atención al detalle fue
+                    excepcional y el código es perfectamente mantenible por
+                    nuestro equipo."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="h-10 w-10 rounded-full bg-emerald-100 mr-3 flex items-center justify-center"
+                    >
+                      <span class="text-emerald-700 font-bold text-sm">MP</span>
+                    </div>
+                    <div>
+                      <p class="font-medium">María Pérez</p>
+                      <p class="text-sm text-muted-foreground">
+                        CTO de FinAnalytics
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 2 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300"
+              >
+                <CardContent className="p-6 md:p-8">
+                  <div class="flex mb-4">
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                  </div>
+                  <p class="text-foreground mb-6 italic">
+                    "La modernización de nuestro sistema legacy ha sido
+                    transformadora. El proceso fue increíblemente fluido y ahora
+                    tenemos una plataforma que podemos escalar. ROI positivo en
+                    menos de 6 meses."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="h-10 w-10 rounded-full bg-emerald-100 mr-3 flex items-center justify-center"
+                    >
+                      <span class="text-emerald-700 font-bold text-sm">JR</span>
+                    </div>
+                    <div>
+                      <p class="font-medium">Javier Rodríguez</p>
+                      <p class="text-sm text-muted-foreground">
+                        Director Tecnológico de RetailCorp
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 3 */}
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-emerald-500/20 overflow-hidden group hover:border-emerald-400/40 transition-all duration-300"
+              >
+                <CardContent className="p-6 md:p-8">
+                  <div class="flex mb-4">
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                    <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                  </div>
+                  <p class="text-foreground mb-6 italic">
+                    "Encontrar un desarrollador con 12 años de experiencia que
+                    pudiera tomar nuestro proyecto desde cero fue un cambio
+                    radical. La plataforma de telemedicina superó nuestras
+                    expectativas en todos los aspectos."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="h-10 w-10 rounded-full bg-emerald-100 mr-3 flex items-center justify-center"
+                    >
+                      <span class="text-emerald-700 font-bold text-sm">AC</span>
+                    </div>
+                    <div>
+                      <p class="font-medium">Ana Campos</p>
+                      <p class="text-sm text-muted-foreground">
+                        Directora de HealthConnect
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* BLOG SECTION */}
+        <section id="blog" class="py-20 border-b border-emerald-500/20">
+          <div class="container max-w-7xl mx-auto px-4">
+            <div class="mb-12 text-center">
+              <div
+                class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+              >
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse">
+                </div>
+                Conocimientos compartidos
+              </div>
+              <h2 class="text-3xl font-bold">Blog Técnico</h2>
+              <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                Artículos y casos de estudio sobre cómo la tecnología puede
+                simplificar procesos complejos en tu negocio.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Blog Post 1 */}
+              <div class="group/post">
+                <div
+                  class="aspect-video mb-4 rounded-lg overflow-hidden relative border border-blue-500/20 group-hover/post:border-blue-400/40 transition-colors"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background/80 via-blue-500/5 to-transparent z-10"
+                  >
+                  </div>
+                  <img
+                    src="/placeholder.svg?height=200&width=400"
+                    alt="IA en desarrollo"
+                    width={400}
+                    height={200}
+                    class="object-cover h-full w-full group-hover/post:scale-105 transition-transform duration-500"
+                  />
+                  <Badge
+                    className="absolute bottom-3 left-3 z-20 bg-emerald-500/80"
+                    >Arquitectura</Badge
+                  >
+                </div>
+                <h4
+                  class="font-medium mb-2 group-hover/post:text-emerald-500 transition-colors"
+                >
+                  Clean Architecture en aplicaciones modernas
+                </h4>
+                <p class="text-sm text-muted-foreground">
+                  Implementación práctica de principios de Clean Architecture en
+                  proyectos del mundo real.
+                </p>
+              </div>
+
+              {/* Blog Post 2 */}
+              <div class="group/post">
+                <div
+                  class="aspect-video mb-4 rounded-lg overflow-hidden relative border border-orange-500/20 group-hover/post:border-orange-400/40 transition-colors"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background/80 via-orange-500/5 to-transparent z-10"
+                  >
+                  </div>
+                  <img
+                    src="/placeholder.svg?height=200&width=400"
+                    alt="Arquitectura Cloud"
+                    width={400}
+                    height={200}
+                    class="object-cover h-full w-full group-hover/post:scale-105 transition-transform duration-500"
+                  />
+                  <Badge
+                    className="absolute bottom-3 left-3 z-20 bg-emerald-500/80"
+                    >Frontend</Badge
+                  >
+                </div>
+                <h4
+                  class="font-medium mb-2 group-hover/post:text-emerald-500 transition-colors"
+                >
+                  Patrones de rendimiento en React
+                </h4>
+                <p class="text-sm text-muted-foreground">
+                  Optimizaciones y estrategias para aplicaciones React de alto
+                  rendimiento y escala.
+                </p>
+              </div>
+
+              {/* Blog Post 3 */}
+              <div class="group/post">
+                <div
+                  class="aspect-video mb-4 rounded-lg overflow-hidden relative border border-purple-500/20 group-hover/post:border-purple-400/40 transition-colors"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background/80 via-purple-500/5 to-transparent z-10"
+                  >
+                  </div>
+                  <img
+                    src="/placeholder.svg?height=200&width=400"
+                    alt="DevOps"
+                    width={400}
+                    height={200}
+                    class="object-cover h-full w-full group-hover/post:scale-105 transition-transform duration-500"
+                  />
+                  <Badge
+                    className="absolute bottom-3 left-3 z-20 bg-emerald-500/80"
+                    >Backend</Badge
+                  >
+                </div>
+                <h4
+                  class="font-medium mb-2 group-hover/post:text-emerald-500 transition-colors"
+                >
+                  Microservicios prácticos con Node.js
+                </h4>
+                <p class="text-sm text-muted-foreground">
+                  Guía completa para implementar y gestionar microservicios en
+                  producción.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10 text-center">
+              <Button variant="outline">
+                Ver más artículos
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA SECTION - MODERNIZADO */}
+        <section class="py-24 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div class="absolute inset-0">
+            <div
+              class="absolute top-0 left-1/4 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/3 rounded-full blur-3xl"
+            >
+            </div>
+          </div>
+
+          <div class="container max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+              {/* Content Side */}
+              <div class="lg:col-span-7">
+                <div class="max-w-2xl">
+                  {/* Badge */}
+                  <div
+                    class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-emerald-500/20"
+                  >
+                    <div
+                      class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                    >
+                    </div>
+                    Comienza hoy
+                  </div>
+
+                  {/* Heading */}
+                  <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    ¿Listo para
+                    <span class="block text-emerald-400"
+                      >simplificar tu negocio?</span
+                    >
+                  </h2>
+
+                  {/* Description */}
+                  <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                    Agenda una consulta <span
+                      class="text-emerald-400 font-semibold">gratuita</span
+                    > y descubre cómo Bithaus puede automatizar procesos repetitivos
+                    y crear aplicaciones intuitivas que impulsen el crecimiento de
+                    tu empresa.
+                  </p>
+
+                  {/* Benefits List */}
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3">
+                      <div
+                        class="w-5 h-5 bg-emerald-500/20 rounded-full flex items-center justify-center"
+                      >
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                      </div>
+                      <span class="text-muted-foreground"
+                        >Consulta inicial <strong class="text-foreground"
+                          >100% gratuita</strong
+                        ></span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <div
+                        class="w-5 h-5 bg-emerald-500/20 rounded-full flex items-center justify-center"
+                      >
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                      </div>
+                      <span class="text-muted-foreground"
+                        >Análisis personalizado de tu <strong
+                          class="text-foreground">proceso de negocio</strong
+                        ></span
+                      >
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <div
+                        class="w-5 h-5 bg-emerald-500/20 rounded-full flex items-center justify-center"
+                      >
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                      </div>
+                      <span class="text-muted-foreground"
+                        >Propuesta de <strong class="text-foreground"
+                          >automatización específica</strong
+                        ></span
+                      >
+                    </li>
+                  </ul>
+
+                  {/* CTA Buttons */}
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      size="xl"
+                      className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl group/btn shadow-lg shadow-emerald-500/25"
+                    >
+                      Solicita evaluación gratuita
+                      <ArrowRight
+                        className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform"
+                      />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="xl"
+                      className="border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10 px-8 py-4 rounded-xl"
+                    >
+                      Ver casos de éxito
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual Side */}
+              <div class="lg:col-span-5">
+                <div class="relative">
+                  {/* Main Card */}
+                  <div
+                    class="bg-card/50 backdrop-blur-sm border border-emerald-500/20 rounded-3xl p-8 group hover:border-emerald-400/40 transition-all duration-500"
+                  >
+                    {/* Header */}
+                    <div class="flex items-center gap-4 mb-6">
+                      <div
+                        class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center"
+                      >
+                        <Code className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 class="font-semibold text-foreground">
+                          Bithaus S.A.S
+                        </h3>
+                        <p class="text-sm text-emerald-400">
+                          Tu socio tecnológico
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Stats */}
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                      <div
+                        class="text-center p-4 bg-emerald-500/5 rounded-xl border border-emerald-500/10"
+                      >
+                        <div class="text-2xl font-bold text-emerald-400">
+                          24/7
+                        </div>
+                        <div class="text-xs text-muted-foreground">Soporte</div>
+                      </div>
+                      <div
+                        class="text-center p-4 bg-emerald-500/5 rounded-xl border border-emerald-500/10"
+                      >
+                        <div class="text-2xl font-bold text-emerald-400">
+                          100%
+                        </div>
+                        <div class="text-xs text-muted-foreground">
+                          Personalizado
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-3">
+                        <Database className="w-4 h-4 text-emerald-400" />
+                        <span class="text-sm text-muted-foreground"
+                          >Automatización de procesos</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <Users className="w-4 h-4 text-emerald-400" />
+                        <span class="text-sm text-muted-foreground"
+                          >Aplicaciones empresariales</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <Shield className="w-4 h-4 text-emerald-400" />
+                        <span class="text-sm text-muted-foreground"
+                          >Seguridad garantizada</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Elements */}
+                  <div
+                    class="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/20 rounded-lg rotate-12 animate-pulse"
+                  >
+                  </div>
+                  <div
+                    class="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-400/30 rounded-full animate-bounce"
+                  >
+                  </div>
+                  <div
+                    class="absolute top-1/2 -right-8 w-4 h-4 bg-orange-500/25 rounded-full animate-ping"
+                  >
+                  </div>
+                  <div
+                    class="absolute -top-8 left-1/3 w-3 h-3 bg-emerald-400/40 rounded-full animate-pulse"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
